@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Kasatria People Table</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="style.css?v=4" />
+
+<!-- Google Identity Services (Sign in with Google) -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<!-- Import map so three.js addon modules resolve cleanly -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+  <!-- ===================== LOGIN SCREEN ===================== -->
+  <div id="login-screen">
+    <div class="login-card">
+      <h1>Welcome Back</h1>
+      <p>Sign in to view the Kasatria interactive people table</p>
+      <div id="g_id_signin"></div>
+      <p id="login-error" class="login-error"></p>
+    </div>
+  </div>
+
+  <!-- ===================== 3D APP SCREEN ===================== -->
+  <div id="app" style="display:none;">
+    <div id="container"></div>
+
+    <div id="menu">
+      <button id="table">TABLE</button>
+      <button id="sphere">SPHERE</button>
+      <button id="helix">HELIX</button>
+      <button id="grid">GRID</button>
+    </div>
+
+    <div id="legend">
+      <span class="dot red"></span> &lt; $100K
+      <span class="dot orange"></span> $100K–$200K
+      <span class="dot green"></span> &gt; $200K
+    </div>
+
+    <div id="user-badge"></div>
+  </div>
+
+  <script src="config.js?v=5"></script>
+  <script type="module" src="app.js?v=5"></script>
+</body>
+</html>
